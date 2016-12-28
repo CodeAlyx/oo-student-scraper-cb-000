@@ -1,4 +1,5 @@
 require "spec_helper"
+require 'pry'
 
 describe "Scraper" do
 
@@ -43,6 +44,7 @@ describe "Scraper" do
     it "can handle profile pages without all of the social links" do
       profile_url = "./fixtures/student-site/students/david-kim.html"
       scraped_student = Scraper.scrape_profile_page(profile_url)
+      
       expect(scraped_student).to be_a(Hash)
       expect(scraped_student).to match(student_david_hash)
     end
